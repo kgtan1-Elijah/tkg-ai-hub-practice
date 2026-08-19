@@ -3,48 +3,127 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TKG AI Hub</title>
+  <title>TKG AI Hub | Tan Keng Ghee</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      text-align: center;
+      color: #16324f;
+      background: #eef5f7;
+    }
+
+    header {
+      padding: 24px 8%;
       color: white;
-      background: linear-gradient(135deg, #12355b, #1d7a8c);
+      background: #12355b;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
     }
 
     main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 90px 25px;
+      max-width: 950px;
+      margin: 45px auto;
+      padding: 0 25px 45px;
     }
 
-    h1 {
-      font-size: 48px;
-      margin-bottom: 12px;
+    .introduction {
+      display: flex;
+      gap: 45px;
+      align-items: center;
+      padding: 42px;
+      border-radius: 18px;
+      background: white;
+      box-shadow: 0 6px 22px rgba(22, 50, 79, 0.15);
+    }
+
+    .profile-photo {
+      width: 260px;
+      max-width: 100%;
+      border: 6px solid #1d7a8c;
+      border-radius: 14px;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #12355b;
+      font-size: 36px;
     }
 
     p {
-      font-size: 21px;
-      line-height: 1.6;
+      font-size: 18px;
+      line-height: 1.7;
     }
 
-    .message {
-      margin-top: 35px;
-      padding: 24px;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.15);
+    .focus {
+      margin-top: 25px;
+      padding: 20px;
+      border-left: 5px solid #1d7a8c;
+      background: #e9f5f6;
+    }
+
+    footer {
+      padding: 22px;
+      text-align: center;
+      color: white;
+      background: #12355b;
+    }
+
+    @media (max-width: 700px) {
+      .introduction {
+        display: block;
+        text-align: center;
+        padding: 28px;
+      }
+
+      .profile-photo {
+        width: 220px;
+        margin-bottom: 25px;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
     }
   </style>
 </head>
 <body>
-  <main>
+  <header>
     <h1>TKG AI Hub</h1>
-    <p>Welcome to my first website created with GitHub.</p>
+  </header>
 
-    <div class="message">
-      <p>I am learning to use AI, data, graphics, video and publishing knowledge to create useful projects.</p>
-    </div>
+  <main>
+    <section class="introduction">
+      <img class="profile-photo" src="profile-photo.png" alt="Tan Keng Ghee">
+
+      <div>
+        <h2>Hello, I am Tan Keng Ghee</h2>
+
+        <p>
+          Welcome to TKG AI Hub. This is my personal space to learn, create
+          and share practical knowledge in artificial intelligence, data
+          analysis, book publishing, graphics and video.
+        </p>
+
+        <p>
+          I am developing useful projects and services that can help
+          individuals and small enterprises explore AI for self-improvement
+          and business enhancement.
+        </p>
+
+        <div class="focus">
+          <strong>My current focus:</strong><br>
+          AI learning and coaching · Data analysis · Book publishing advice ·
+          AI graphics · AI video content
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    © 2026 Tan Keng Ghee · TKG AI Hub
+  </footer>
 </body>
 </html>
