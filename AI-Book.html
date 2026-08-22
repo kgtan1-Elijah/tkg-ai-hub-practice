@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI for Books & Publishing | TKG AI Hub</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #17324d;
+      background: #f3f7f8;
+    }
+
+    header {
+      padding: 18px 8%;
+      color: white;
+      background: #12355b;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    header p {
+      margin: 6px 0 0;
+      font-size: 15px;
+    }
+
+    nav {
+      margin-top: 14px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 1080px;
+      margin: auto;
+      padding: 45px 25px 60px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 38px;
+      align-items: center;
+      padding: 38px;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 6px 22px rgba(22, 50, 79, 0.14);
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 14px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      color: #12355b;
+      font-size: 34px;
+    }
+
+    h3 {
+      color: #12355b;
+    }
+
+    p, li {
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .section-title {
+      margin: 58px 0 18px;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .intro {
+      max-width: 780px;
+      margin: 0 auto 28px;
+      text-align: center;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      padding: 22px;
+      border-radius: 14px;
+      background: white;
+      box-shadow: 0 4px 14px rgba(22, 50, 79, 0.1);
+    }
+
+    .number {
+      color: #1d7a8c;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .projects,
+    .consultations {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      padding: 28px;
+      border-radius: 16px;
+      background: white;
+      box-shadow: 0 4px 14px rgba(22, 50, 79, 0.1);
+    }
+
+    details {
+      margin-top: 20px;
+      padding: 18px 22px;
+      border-radius: 12px;
+      background: #e8f5f6;
+    }
+
+    summary {
+      cursor: pointer;
+      color: #12355b;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .app-list {
+      margin-top: 18px;
+    }
+
+    .app-list a,
+    .resource-links a {
+      color: #0b6573;
+      font-weight: bold;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 18px;
+      border-collapse: collapse;
+      background: white;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #c9d9dc;
+    }
+
+    th {
+      color: white;
+      background: #12355b;
+    }
+
+    .notice {
+      padding: 22px;
+      border-left: 5px solid #1d7a8c;
+      background: #e8f5f6;
+    }
+
+    footer {
+      padding: 24px;
+      text-align: center;
+      color: white;
+      background: #12355b;
+    }
+
+    @media (max-width: 800px) {
+      .hero,
+      .projects,
+      .consultations,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 29px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>TKG AI Hub</h1>
+    <p>Practical AI for Personal Growth and SME Efficiency</p>
+
+    <nav>
+      <a href="index.html">← Return to Landing Page</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="AI-Books.png" alt="AI for Books and Publishing">
+
+      <div>
+        <h2>AI for Books & Publishing</h2>
+
+        <p>
+          Turn your story, knowledge, experience or passion into a book.
+        </p>
+
+        <p>
+          AI can help you develop an idea, organise chapters, improve drafts,
+          prepare final checks and understand the path towards publication.
+        </p>
+
+        <p>
+          Your voice and experience remain at the centre. AI becomes your
+          structured writing and publishing partner.
+        </p>
+      </div>
+    </section>
+
+    <h2 class="section-title">Your AI-Supported Book Journey</h2>
+
+    <p class="intro">
+      A practical pathway from an early idea to a book ready for publication.
+    </p>
+
+    <section class="steps">
+      <div class="step">
+        <div class="number">1</div>
+        <h3>Develop the Idea</h3>
+        <p>Clarify your purpose, readers, book title and main message.</p>
+      </div>
+
+      <div class="step">
+        <div class="number">2</div>
+        <h3>Plan and Write</h3>
+        <p>Build chapters, organise notes, research carefully and improve drafts.</p>
+      </div>
+
+      <div class="step">
+        <div class="number">3</div>
+        <h3>Check and Publish</h3>
+        <p>Conduct final checks and prepare your manuscript for printing or submission.</p>
+      </div>
+    </section>
+
+    <details>
+      <summary>See writing-app options ▾</summary>
+
+      <div class="app-list">
+        <p>
+          Different writers need different workspaces. During a consultation,
+          we can identify the tool that suits your book project.
+        </p>
+
+        <ul>
+          <li>
+            <a href="https://reedsy.com/studio/" target="_blank">
+              Reedsy Studio
+            </a>
+            — a useful free starting option for planning, writing, editing and formatting.
+          </li>
+
+          <li>
+            <a href="https://kdp.amazon.com/help/topic/GYVL2CASGU9ACFVU" target="_blank">
+              Kindle Create
+            </a>
+            — a free tool for preparing eBook and print files for Amazon KDP.
+          </li>
+
+          <li>
+            <a href="https://www.literatureandlatte.com/scrivener/overview" target="_blank">
+              Scrivener
+            </a>
+            — useful for larger manuscripts with many chapters, notes and research materials.
+          </li>
+
+          <li>
+            <a href="https://www.atticus.io/" target="_blank">
+              Atticus
+            </a>
+            — a paid writing and formatting option for print books and eBooks.
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <h2 class="section-title">Two Practical Book Projects</h2>
+
+    <section class="projects">
+      <article class="card">
+        <h3>US and Canada Tour Journal</h3>
+
+        <p>
+          A retirement journey combining travel memories, landmark sketches,
+          football experiences and personal reflection.
+        </p>
+
+        <p>
+          AI supported planning, historical research, journal editing and
+          reflection writing.
+        </p>
+
+        <p><strong>Selected sample pages may be added later.</strong></p>
+      </article>
+
+      <article class="card">
+        <h3>FIFA World Cup 2026 Facts and Records</h3>
+
+        <p>
+          An independent and unofficial full-colour reference project combining
+          tournament statistics, records, stories and visual documentation.
+        </p>
+
+        <p>
+          AI supported research organisation, content planning, drafting,
+          editing, final checking and publication preparation.
+        </p>
+
+        <p><strong>Selected sample pages may be added later.</strong></p>
+      </article>
+    </section>
+
+    <h2 class="section-title">Two Consultation Pathways</h2>
+
+    <section class="consultations">
+      <article class="card">
+        <h3>1. Use AI to Write and Compile Your Book</h3>
+
+        <p>
+          For people with a story, knowledge, family history, travel experience,
+          hobby, professional expertise or business idea.
+        </p>
+
+        <ul>
+          <li>Book purpose, reader and chapter plan</li>
+          <li>Useful AI prompts and writing workflow</li>
+          <li>Research, notes and source checking</li>
+          <li>Draft improvement while keeping your own voice</li>
+          <li>Images, captions, layout and final checking</li>
+        </ul>
+
+        <p>
+          <strong>Outcome:</strong> A practical plan for developing your book
+          with AI.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>2. Publish and Sell Your Book</h3>
+
+        <p>
+          For self-publishers with a completed or near-completed manuscript.
+        </p>
+
+        <ul>
+          <li>Publishing routes and print-on-demand choices</li>
+          <li>Preparing a manuscript and cover for quotation</li>
+          <li>ISBN and legal-deposit preparation</li>
+          <li>Book synopsis, author profile and promotional material</li>
+          <li>Online, bookstore and personal-network sales approaches</li>
+        </ul>
+
+        <p>
+          <strong>Outcome:</strong> A realistic publishing and sales action plan
+          suited to your book, budget and readers.
+        </p>
+      </article>
+    </section>
+
+    <details>
+      <summary>See printer-quotation comparison checklist ▾</summary>
+
+      <p>
+        Compare quotations using the same book specification. This makes the
+        final comparison fair and meaningful.
+      </p>
+
+      <table>
+        <tr>
+          <th>Comparison item</th>
+          <th>What to check</th>
+        </tr>
+        <tr>
+          <td>Quantity</td>
+          <td>Number of copies, minimum order and reprint options</td>
+        </tr>
+        <tr>
+          <td>Book format</td>
+          <td>Finished size, page count and orientation</td>
+        </tr>
+        <tr>
+          <td>Cover</td>
+          <td>Paper type, thickness, colour and finish</td>
+        </tr>
+        <tr>
+          <td>Inside pages</td>
+          <td>Paper type, thickness, colour or black-and-white printing</td>
+        </tr>
+        <tr>
+          <td>Binding</td>
+          <td>Perfect binding, saddle stitch, hardcover or other method</td>
+        </tr>
+        <tr>
+          <td>Proof copy</td>
+          <td>Whether a printed proof or digital proof is included</td>
+        </tr>
+        <tr>
+          <td>Delivery</td>
+          <td>Production time, delivery date and delivery charges</td>
+        </tr>
+        <tr>
+          <td>Total cost</td>
+          <td>Total quotation, unit cost and any additional charges</td>
+        </tr>
+      </table>
+    </details>
+
+    <h2 class="section-title">Singapore Publishing Resources</h2>
+
+    <section class="notice">
+      <p>
+        For Singapore self-publishers, the National Library Board provides
+        official publisher-account, International Standard Number and legal-deposit
+        information.
+      </p>
+
+      <p class="resource-links">
+        <a href="https://www.nlb.gov.sg/main/services/For-Publishers/publisher-account-and-ISNs" target="_blank">
+          NLB Publisher Account and ISNs
+        </a>
+        <br>
+
+        <a href="https://www.nlb.gov.sg/depositapp/" target="_blank">
+          NLB Deposit Portal
+        </a>
+        <br>
+
+        <a href="https://www.nlb.gov.sg/main/services/For-Publishers/Legal-Deposit" target="_blank">
+          NLB Legal Deposit for Publishers
+        </a>
+      </p>
+
+      <p>
+        Publisher acceptance and bookstore placement are decisions made by the
+        respective organisations and cannot be guaranteed.
+      </p>
+    </section>
+
+    <h2 class="section-title">Start with Your Book Idea</h2>
+
+    <p class="intro">
+      Whether you have only an idea, a collection of notes or a completed
+      manuscript, AI can help you move forward with a clearer plan.
+    </p>
+  </main>
+
+  <footer>
+    © 2026 Tan Keng Ghee · TKG AI Hub
+  </footer>
+</body>
+</html>
