@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Graphic Creation | TKG AI Hub</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #17324d;
+      background: #f3f7f8;
+    }
+
+    header {
+      padding: 18px 8%;
+      color: white;
+      background: #12355b;
+    }
+
+    header h1 { margin: 0; font-size: 28px; }
+    header p { margin: 6px 0 0; font-size: 15px; }
+
+    nav { margin-top: 14px; }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
+
+    main {
+      max-width: 1080px;
+      margin: auto;
+      padding: 45px 25px 60px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 38px;
+      align-items: center;
+      padding: 38px;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 6px 22px rgba(22, 50, 79, 0.14);
+    }
+
+    .hero img { width: 100%; border-radius: 14px; }
+
+    h2 { margin: 0 0 14px; color: #12355b; font-size: 34px; }
+    h3 { margin-top: 0; color: #12355b; }
+    p, li { font-size: 17px; line-height: 1.65; }
+
+    .section-title {
+      margin: 58px 0 18px;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .intro {
+      max-width: 780px;
+      margin: 0 auto 28px;
+      text-align: center;
+    }
+
+    .steps, .gallery, .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .services { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+    .step, .card {
+      padding: 22px;
+      border-radius: 14px;
+      background: white;
+      box-shadow: 0 4px 14px rgba(22, 50, 79, 0.10);
+    }
+
+    .number { color: #1d7a8c; font-size: 28px; font-weight: bold; }
+
+    .portfolio-item {
+      overflow: hidden;
+      border-radius: 14px;
+      background: white;
+      box-shadow: 0 4px 14px rgba(22, 50, 79, 0.10);
+    }
+
+    .portfolio-item img {
+      display: block;
+      width: 100%;
+      height: 215px;
+      object-fit: cover;
+    }
+
+    .portfolio-caption { padding: 16px 18px; }
+    .portfolio-caption h3 { margin: 0 0 6px; font-size: 18px; }
+    .portfolio-caption p { margin: 0; font-size: 15px; }
+
+    details {
+      margin-top: 22px;
+      padding: 18px 22px;
+      border-radius: 12px;
+      background: #e8f5f6;
+    }
+
+    summary {
+      cursor: pointer;
+      color: #12355b;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .app-list { margin-top: 18px; }
+    .app-list a { color: #0b6573; font-weight: bold; }
+
+    .notice {
+      padding: 22px;
+      border-left: 5px solid #1d7a8c;
+      background: #e8f5f6;
+    }
+
+    .rate {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: white;
+      background: #1d7a8c;
+      font-weight: bold;
+    }
+
+    footer {
+      padding: 24px;
+      text-align: center;
+      color: white;
+      background: #12355b;
+    }
+
+    @media (max-width: 800px) {
+      .hero, .steps, .gallery, .services { grid-template-columns: 1fr; }
+      .hero { text-align: center; }
+      h2 { font-size: 29px; }
+      .portfolio-item img { height: auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>TKG AI Hub</h1>
+    <p>Practical AI for Personal Growth and SME Efficiency</p>
+    <nav><a href="index.html">← Return to Landing Page</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="AI-Graphic.png" alt="AI Graphic Creation">
+      <div>
+        <h2>AI Graphic Creation</h2>
+        <p>Turn an idea, story or message into a meaningful visual design.</p>
+        <p>At TKG AI Hub, I use AI to explore customised images, logo concepts, commemorative coin concepts, information panels, book visuals and website graphics.</p>
+        <p>AI helps generate visual directions quickly. Human judgement remains essential to select, refine and apply the design for its real purpose.</p>
+      </div>
+    </section>
+
+    <h2 class="section-title">A Practical AI Graphic Journey</h2>
+    <p class="intro">A clear process from the first idea to a visual ready for sharing, publishing or presentation.</p>
+
+    <section class="steps">
+      <article class="step">
+        <div class="number">1</div>
+        <h3>Define the Idea</h3>
+        <p>Clarify the purpose, audience, message, style, colours and intended use of the visual.</p>
+      </article>
+      <article class="step">
+        <div class="number">2</div>
+        <h3>Create and Refine</h3>
+        <p>Use structured prompts to generate visual options, then select and improve the best direction.</p>
+      </article>
+      <article class="step">
+        <div class="number">3</div>
+        <h3>Apply the Design</h3>
+        <p>Prepare the final graphic for a website, book, presentation, print item or personal project.</p>
+      </article>
+    </section>
+
+    <h2 class="section-title">Selected Graphic Work</h2>
+    <p class="intro">Examples of AI-supported creative and information-design projects developed by Tan Keng Ghee.</p>
+
+    <section class="gallery">
+      <article class="portfolio-item">
+        <img src="Graphic1.png" alt="Customised children and dragon story images">
+        <div class="portfolio-caption">
+          <h3>Customised Story Images</h3>
+          <p>A sequence of imaginative scenes developed around a child-and-dragon story concept.</p>
+        </div>
+      </article>
+      <article class="portfolio-item">
+        <img src="Graphic2.png" alt="World Cup final information panel">
+        <div class="portfolio-caption">
+          <h3>Information Panel</h3>
+          <p>A structured visual summary that combines key facts, statistics and storytelling.</p>
+        </div>
+      </article>
+      <article class="portfolio-item">
+        <img src="Graphic3.png" alt="World Cup book cover concept">
+        <div class="portfolio-caption">
+          <h3>Book Cover Concept</h3>
+          <p>A commemorative cover visual developed for a football facts-and-records book project.</p>
+        </div>
+      </article>
+      <article class="portfolio-item">
+        <img src="Graphic4.png" alt="Customised travel photograph">
+        <div class="portfolio-caption">
+          <h3>Customised Travel Image</h3>
+          <p>A personal travel photograph prepared for journal and visual-storytelling use.</p>
+        </div>
+      </article>
+      <article class="portfolio-item">
+        <img src="Graphic5.png" alt="Commemorative coin design concepts">
+        <div class="portfolio-caption">
+          <h3>Commemorative Coin Concepts</h3>
+          <p>Theme-based coin concepts combining symbols, colours, places and important memories.</p>
+        </div>
+      </article>
+      <article class="portfolio-item">
+        <img src="AI-Graphic.png" alt="TKG AI Graphic Creation panel">
+        <div class="portfolio-caption">
+          <h3>Website Graphic Panels</h3>
+          <p>Visual panels that help visitors understand a service quickly and clearly.</p>
+        </div>
+      </article>
+    </section>
+
+    <h2 class="section-title">Explore AI Graphic Apps</h2>
+    <p class="intro">There is no single best application. The right choice depends on what you need to create and how you plan to use it.</p>
+
+    <details>
+      <summary>See selected AI graphic-app options ▾</summary>
+      <div class="app-list">
+        <ul>
+          <li><a href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT</a> — conversational image creation and refinement from detailed instructions.</li>
+          <li><a href="https://gemini.google.com/" target="_blank" rel="noopener">Google Gemini</a> — AI-assisted image ideation and image generation within the Gemini experience.</li>
+          <li><a href="https://www.canva.com/" target="_blank" rel="noopener">Canva</a> — quick layouts, social-media graphics, presentations and simple branded materials.</li>
+          <li><a href="https://www.adobe.com/products/firefly.html" target="_blank" rel="noopener">Adobe Firefly</a> — image generation and editing within the Adobe creative workflow.</li>
+          <li><a href="https://www.midjourney.com/" target="_blank" rel="noopener">Midjourney</a> — artistic visual exploration and concept development.</li>
+        </ul>
+        <p>Tool features, prices and commercial-use terms change regularly. Always review the provider's current terms before using an image commercially.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do we choose the right app? ▾</summary>
+      <div class="app-list">
+        <ul>
+          <li><strong>Purpose:</strong> Is the output a logo concept, customised image, book visual, panel or social post?</li>
+          <li><strong>Output:</strong> Is it mainly for screen viewing, printing, presentation or a website?</li>
+          <li><strong>Control:</strong> Do you need to edit text, colours, layout or individual design elements afterwards?</li>
+          <li><strong>Budget and learning:</strong> Do you need a simple starting tool or a more advanced workflow?</li>
+          <li><strong>Rights and references:</strong> Do you have permission to use supplied photos, names, logos and other reference materials?</li>
+        </ul>
+      </div>
+    </details>
+
+    <h2 class="section-title">Work with TKG AI Hub</h2>
+
+    <section class="services">
+      <article class="card">
+        <h3>1. AI Graphic Consultation and Coaching</h3>
+        <p>For individuals or small enterprises who want to learn a practical way to use AI for their own visuals.</p>
+        <ul>
+          <li>Choose a suitable app and workflow</li>
+          <li>Develop clear prompts and visual ideas</li>
+          <li>Review and refine AI-generated images</li>
+          <li>Prepare visuals for books, websites and presentations</li>
+        </ul>
+        <p><span class="rate">S$15 per hour</span></p>
+      </article>
+
+      <article class="card">
+        <h3>2. AI Graphic Freelance Service</h3>
+        <p>For people who would like help developing a customised visual project.</p>
+        <ul>
+          <li>Customised images and creative concepts</li>
+          <li>Logo, book-cover, coin and panel concepts</li>
+          <li>Website, presentation and promotional visuals</li>
+          <li>Review and refinement based on agreed feedback</li>
+        </ul>
+        <p><span class="rate">S$15 per hour</span></p>
+      </article>
+    </section>
+
+    <section class="notice" style="margin-top: 28px;">
+      <p><strong>Working approach:</strong> Services are provided using available AI tools, primarily ChatGPT and Google Gemini, supported by other suitable tools where needed.</p>
+      <p>Before work begins, we will agree the purpose, scope, materials, estimated time and intended use. Clients should provide only images and reference materials they are permitted to use. Final commercial-use responsibility remains with the client and the relevant tool-provider terms.</p>
+    </section>
+
+    <h2 class="section-title">Start with Your Visual Idea</h2>
+    <p class="intro">Whether you have a simple idea, a rough sketch, a photograph or a complete message, we can explore how AI may help turn it into a clear and meaningful visual.</p>
+  </main>
+
+  <footer>© 2026 Tan Keng Ghee · TKG AI Hub</footer>
+</body>
+</html>
