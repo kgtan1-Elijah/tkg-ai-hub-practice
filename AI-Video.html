@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Video Production | TKG AI Hub</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #17324d;
+      background: #f3f7f8;
+    }
+
+    header {
+      padding: 18px 8%;
+      color: white;
+      background: #12355b;
+    }
+
+    header h1 { margin: 0; font-size: 28px; }
+    header p { margin: 6px 0 0; font-size: 15px; }
+
+    nav { margin-top: 14px; }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
+
+    main {
+      max-width: 1180px;
+      margin: auto;
+      padding: 45px 25px 60px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 38px;
+      align-items: center;
+      padding: 38px;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 6px 22px rgba(22, 50, 79, 0.14);
+    }
+
+    .hero img { width: 100%; border-radius: 14px; }
+
+    h2 { margin: 0 0 14px; color: #12355b; font-size: 34px; }
+    h3 { margin-top: 0; color: #12355b; }
+    p, li, td { font-size: 16px; line-height: 1.55; }
+
+    .section-title {
+      margin: 58px 0 18px;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 0 auto 28px;
+      text-align: center;
+    }
+
+    .steps, .video-grid, .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .step, .video-card, .service-card {
+      overflow: hidden;
+      border-radius: 16px;
+      background: white;
+      box-shadow: 0 4px 14px rgba(22, 50, 79, 0.10);
+    }
+
+    .step { padding: 22px; }
+    .number { color: #1d7a8c; font-size: 28px; font-weight: bold; }
+
+    .video-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 330px;
+      color: inherit;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(22, 50, 79, 0.18);
+    }
+
+    .thumbnail-wrap {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: linear-gradient(135deg, #12355b, #1d7a8c);
+    }
+
+    .video-thumbnail {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .thumbnail-placeholder {
+      display: none;
+      position: absolute;
+      inset: 0;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      text-align: center;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      background: linear-gradient(135deg, #12355b, #1d7a8c);
+    }
+
+    .play-badge {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      padding: 8px 11px;
+      border-radius: 7px;
+      color: white;
+      background: rgba(18, 53, 91, 0.92);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .video-caption { padding: 20px; }
+    .video-caption h3 { margin-bottom: 8px; font-size: 19px; }
+    .video-caption p { margin: 0; }
+
+    .service-card { padding: 28px; }
+
+    details {
+      margin: 22px 0;
+      padding: 18px 22px;
+      border-radius: 12px;
+      background: #e8f5f6;
+    }
+
+    summary {
+      cursor: pointer;
+      color: #12355b;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .table-note {
+      margin: 18px 0 10px;
+      font-size: 15px;
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      margin-top: 16px;
+      border: 1px solid #c9d9dc;
+      background: white;
+    }
+
+    table {
+      width: 100%;
+      min-width: 1000px;
+      border-collapse: collapse;
+      background: white;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+      border: 1px solid #c9d9dc;
+    }
+
+    th {
+      color: white;
+      background: #12355b;
+      font-size: 14px;
+    }
+
+    .tool-cell {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      min-width: 175px;
+      background: #f8fcfc;
+    }
+
+    th.tool-cell { z-index: 2; background: #12355b; }
+    .tool-name { display: block; margin-bottom: 10px; font-weight: bold; }
+
+    .demo-button {
+      display: inline-block;
+      padding: 7px 10px;
+      border-radius: 6px;
+      color: white;
+      background: #1d7a8c;
+      text-decoration: none;
+      white-space: nowrap;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .notice {
+      padding: 22px;
+      border-left: 5px solid #1d7a8c;
+      background: #e8f5f6;
+    }
+
+    footer {
+      padding: 24px;
+      text-align: center;
+      color: white;
+      background: #12355b;
+    }
+
+    @media (max-width: 800px) {
+      .hero, .steps, .video-grid, .services { grid-template-columns: 1fr; }
+      .hero { text-align: center; }
+      h2 { font-size: 29px; }
+      main { padding: 32px 18px 45px; }
+      details { padding: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>TKG AI Hub</h1>
+    <p>Practical AI for Personal Growth and SME Efficiency</p>
+    <nav><a href="index.html">← Return to Landing Page</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="AI-Video.png" alt="AI video production">
+      <div>
+        <h2>AI Video Production</h2>
+        <p>Turn an idea, a story, photographs or existing footage into a clear and engaging video.</p>
+        <p>AI video tools can support concept development, scene creation, narration, captions and editing. Traditional video-editing skills remain valuable for structure, pacing and final presentation.</p>
+        <p>There is no single best tool. TKG AI Hub helps you understand available options and choose a suitable video-creation workflow for your project.</p>
+      </div>
+    </section>
+
+    <h2 class="section-title">A Practical Video-Creation Journey</h2>
+    <p class="intro">A good video begins with a clear purpose and finishes with careful review—not simply with a powerful app.</p>
+
+    <section class="steps">
+      <article class="step">
+        <div class="number">1</div>
+        <h3>Plan the Message</h3>
+        <p>Clarify the audience, purpose, story, format and key message before creating scenes.</p>
+      </article>
+      <article class="step">
+        <div class="number">2</div>
+        <h3>Create and Edit</h3>
+        <p>Use suitable footage, images, AI generation, narration, music, captions and editing tools.</p>
+      </article>
+      <article class="step">
+        <div class="number">3</div>
+        <h3>Review and Share</h3>
+        <p>Check facts, permissions, captions, sound, pacing and final format before publishing.</p>
+      </article>
+    </section>
+
+    <h2 class="section-title">Traditional Video Production</h2>
+    <p class="intro">Examples of earlier video work, showing planning, editing and personalised storytelling.</p>
+
+    <section class="video-grid">
+      <a class="video-card" href="https://www.youtube.com/watch?v=Bz8IATLl16Q" target="_blank" rel="noopener">
+        <div class="thumbnail-wrap">
+          <img class="video-thumbnail" src="TVideo1-TD-3DContruction.png" alt="Thumbnail for Stages of 3D Building Construction" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="thumbnail-placeholder">Stages of 3D Building Construction</div><span class="play-badge">▶ Watch video</span>
+        </div>
+        <div class="video-caption"><h3>Stages of 3D Building Construction</h3><p>Stages of building construction rendered using 3D software.</p></div>
+      </a>
+
+      <a class="video-card" href="https://www.youtube.com/watch?v=wt-8OPxu49A" target="_blank" rel="noopener">
+        <div class="thumbnail-wrap">
+          <img class="video-thumbnail" src="TVideo2-TD-CNYGreeting.png" alt="Thumbnail for Personalised CNY Greeting" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="thumbnail-placeholder">Personalised CNY Greeting</div><span class="play-badge">▶ Watch video</span>
+        </div>
+        <div class="video-caption"><h3>Personalised CNY Greeting</h3><p>A personalised greeting with the addressee’s and sender’s names.</p></div>
+      </a>
+
+      <a class="video-card" href="https://www.youtube.com/watch?v=TCYgV8DZZ2Y" target="_blank" rel="noopener">
+        <div class="thumbnail-wrap">
+          <img class="video-thumbnail" src="TVideo3-TD-XmasGreeting.png" alt="Thumbnail for Personalised Christmas Greeting" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="thumbnail-placeholder">Personalised Christmas Greeting</div><span class="play-badge">▶ Watch video</span>
+        </div>
+        <div class="video-caption"><h3>Personalised Christmas Greeting</h3><p>A customised Christmas greeting video with personal names.</p></div>
+      </a>
+
+      <a class="video-card" href="https://www.youtube.com/watch?v=mfLtUNXdPq8" target="_blank" rel="noopener">
+        <div class="thumbnail-wrap">
+          <img class="video-thumbnail" src="TVideo4-TD-MBSBouncing.png" alt="Thumbnail for MBS Bouncing" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="thumbnail-placeholder">MBS Bouncing</div><span class="play-badge">▶ Watch video</span>
+        </div>
+        <div class="video-caption"><h3>MBS Bouncing</h3><p>A light-hearted video imagining Marina Bay Sands buildings moving around.</p></div>
+      </a>
+
+      <a class="video-card" href="https://www.youtube.com/watch?v=htgnWJ5AX4M" target="_blank" rel="noopener">
+        <div class="thumbnail-wrap">
+          <img class="video-thumbnail" src="TVideo5-TD-TravelVideo.png" alt="Thumbnail for TKG Taiwan Trips Video" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="thumbnail-placeholder">TKG Taiwan Trips Video</div><span class="play-badge">▶ Watch video</span>
+        </div>
+        <div class="video-caption"><h3>TKG Taiwan Trips Video</h3><p>A travel video recording the Taiwan trip experience.</p></div>
+      </a>
+    </section>
+
+    <h2 class="section-title">AI Video Production</h2>
+    <p class="intro">Examples of AI-supported educational and imaginative video projects.</p>
+
+    <section class="video-grid">
+      <a class="video-card" href="https://www.veed.io/view/645133c3-7abb-4dd2-80cf-3d0b16580b44?panel=share" target="_blank" rel="noopener">
+        <div class="thumbnail-wrap">
+          <img class="video-thumbnail" src="AIVideo1-TD-Birdfly.png" alt="Thumbnail for Why Can Birds Fly?" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="thumbnail-placeholder">Why Can Birds Fly?</div><span class="play-badge">▶ Watch video</span>
+        </div>
+        <div class="video-caption"><h3>Why Can Birds Fly?</h3><p>Turning a Bird Park visit into a science question for children.</p></div>
+      </a>
+
+      <a class="video-card" href="https://www.veed.io/view/f2891efc-23cb-4940-92a0-6885e1d18ddc?panel=share" target="_blank" rel="noopener">
+        <div class="thumbnail-wrap">
+          <img class="video-thumbnail" src="AIVideo2-TD-Election.png" alt="Thumbnail for Singapore General Election" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="thumbnail-placeholder">Singapore General Election</div><span class="play-badge">▶ Watch video</span>
+        </div>
+        <div class="video-caption"><h3>Singapore General Election</h3><p>An educational video to help children understand Singapore’s General Election.</p></div>
+      </a>
+
+      <a class="video-card" href="https://www.veed.io/view/f7849dc2-2d08-4f71-9676-5ef565dda33c?panel=share" target="_blank" rel="noopener">
+        <div class="thumbnail-wrap">
+          <img class="video-thumbnail" src="AIVideo3-TD-Robot.png" alt="Thumbnail for Elijah’s Robot GEN1 vs GEN2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="thumbnail-placeholder">Elijah’s Robot GEN1 vs GEN2</div><span class="play-badge">▶ Watch video</span>
+        </div>
+        <div class="video-caption"><h3>Elijah’s Robot GEN1 vs GEN2</h3><p>An imaginative comparison between two robot-generation concepts.</p></div>
+      </a>
+
+      <a class="video-card" href="https://www.veed.io/view/e3cd4b52-195f-4192-811d-588ce76ce2fa?panel=share" target="_blank" rel="noopener">
+        <div class="thumbnail-wrap">
+          <img class="video-thumbnail" src="AIVideo4-TD-Space.png" alt="Thumbnail for The Solar System" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="thumbnail-placeholder">The Solar System</div><span class="play-badge">▶ Watch video</span>
+        </div>
+        <div class="video-caption"><h3>The Solar System</h3><p>An educational video to help children understand the Solar System.</p></div>
+      </a>
+    </section>
+
+    <h2 class="section-title">Explore AI Video Apps</h2>
+    <p class="intro">Video tools change rapidly. Use these tables as a starting guide and check each provider’s current features, prices and commercial-use terms before deciding.</p>
+
+    <details>
+      <summary>See selected AI video-app options with demo video ▾</summary>
+      <p class="table-note">Each <strong>Watch Demo</strong> button opens an introductory video in a new tab. The button stays beside the tool name even when you scroll the table.</p>
+      <div class="table-scroll">
+        <table>
+          <tr><th class="tool-cell">Tool / Demo</th><th>Best for</th><th>How to access</th><th>Starting price</th><th>Core capabilities</th></tr>
+          <tr><td class="tool-cell"><span class="tool-name">Runway<br>(Runway ML)</span><a class="demo-button" href="https://www.youtube.com/shorts/glakK_mTSDA" target="_blank" rel="noopener">▶ Watch Demo</a></td><td>Marketers, editors and filmmakers needing camera movement and reference controls.</td><td>Web browser, API.</td><td>Free credits; paid plans from about US$12/month.</td><td>AI generation, motion and camera controls, video editing, performance tools and brand-consistency features.</td></tr>
+          <tr><td class="tool-cell"><span class="tool-name">Kling AI<br>(Kuaishou)</span><a class="demo-button" href="https://www.youtube.com/shorts/uDIItU7dV_U" target="_blank" rel="noopener">▶ Watch Demo</a></td><td>Dialogue-led advertising and photorealistic human movement.</td><td>Web browser, API.</td><td>Free credits; paid plans from about US$10/month.</td><td>Human expressions, lip-sync, multi-shot storyboard features and higher-resolution outputs.</td></tr>
+          <tr><td class="tool-cell"><span class="tool-name">Google Veo<br>(Google)</span><a class="demo-button" href="https://www.youtube.com/watch?v=ODyROOW1dCo" target="_blank" rel="noopener">▶ Watch Demo</a></td><td>Realistic physics, prompt adherence and synchronised audio.</td><td>Gemini/Google AI plans and Vertex AI.</td><td>Plan and region dependent.</td><td>Video with dialogue, ambient sound and music; reference, extend and transition workflows.</td></tr>
+          <tr><td class="tool-cell"><span class="tool-name">Seedance<br>(ByteDance)</span><a class="demo-button" href="https://www.youtube.com/shorts/eTThBWfHxts" target="_blank" rel="noopener">▶ Watch Demo</a></td><td>Multi-shot stories, character consistency and product layouts.</td><td>Selected web hubs and API.</td><td>Credit- or API-based.</td><td>Audio-visual generation and support for product, text, lighting and identity consistency.</td></tr>
+          <tr><td class="tool-cell"><span class="tool-name">Pika<br>(Pika Labs)</span><a class="demo-button" href="https://www.youtube.com/shorts/w25cD2aWUkw" target="_blank" rel="noopener">▶ Watch Demo</a></td><td>Social creators wanting playful effects and fast transformations.</td><td>Web browser.</td><td>Free credits; paid plans from about US$10/month.</td><td>Scene and object transformations, first/last-frame transitions and talking-head performance features.</td></tr>
+          <tr><td class="tool-cell"><span class="tool-name">OpenAI Sora<br>(legacy)</span><a class="demo-button" href="https://www.youtube.com/shorts/Nx6X_KiQc0c" target="_blank" rel="noopener">▶ Watch Demo</a></td><td>Reference only; do not start a new long-term workflow.</td><td>Legacy API.</td><td>Not recommended for new use.</td><td>The Sora API is scheduled to permanently shut down on 24 September 2026. <a href="https://developers.openai.com/api/reference/typescript/resources/videos/methods/create" target="_blank" rel="noopener">Official notice</a>.</td></tr>
+          <tr><td class="tool-cell"><span class="tool-name">Luma Dream Machine<br>(Luma Labs)</span><a class="demo-button" href="https://www.youtube.com/shorts/N6bgcmQ_Dds" target="_blank" rel="noopener">▶ Watch Demo</a></td><td>Rapid visual brainstorming and smooth camera moves.</td><td>Web browser, API.</td><td>Paid plans from about US$9.99/month.</td><td>Fast rendering, draft mode, camera movement and character-reference support.</td></tr>
+          <tr><td class="tool-cell"><span class="tool-name">Hailuo AI<br>(MiniMax)</span><a class="demo-button" href="https://www.youtube.com/shorts/eMRCq1yf5_s" target="_blank" rel="noopener">▶ Watch Demo</a></td><td>Creators seeking a budget-conscious option for expressive prompts.</td><td>Web browser, API.</td><td>Free credits; paid plans from about US$10/month.</td><td>Natural-looking movement and prompt-led short video generation.</td></tr>
+          <tr><td class="tool-cell"><span class="tool-name">Pixazo<br>(AI Video Editor)</span><a class="demo-button" href="https://www.youtube.com/watch?v=DQ-e16tsV5I" target="_blank" rel="noopener">▶ Watch Demo</a></td><td>Combining manual footage with AI-generated clips in one editing process.</td><td>Web browser.</td><td>Free credits; paid plans from about US$15/month.</td><td>Timeline editing, multi-model AI workspace, recording and translation tools.</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details>
+      <summary>See technical and editing decision factors ▾</summary>
+      <p class="table-note">This comparison helps you identify the capabilities that matter for your project. It is not a guarantee of output quality or commercial rights.</p>
+      <div class="table-scroll">
+        <table>
+          <tr><th class="tool-cell">Tool / Demo</th><th>Input modes</th><th>Typical clip length</th><th>Camera control</th><th>Resolution</th><th>Audio and lip-sync</th><th>Commercial-use check</th><th>Starting price</th></tr>
+          <tr><td class="tool-cell"><span class="tool-name">Runway</span><a class="demo-button" href="https://www.youtube.com/shorts/glakK_mTSDA" target="_blank" rel="noopener">▶ Watch Demo</a></td><td>Text, image and video inputs.</td><td>About 5–10 seconds.</td><td>Yes; pan, zoom, tilt and motion tools.</td><td>Check current plan.</td><td>Audio and lip-sync depend on the workflow.</td><td>Review current plan terms; paid plans commonly include commercial rights.</td><td>From about US$12/month.</td></tr>
+          <tr><td class="tool-cell"><span class="tool-name">Kling AI</span><a class="demo-button" href="https://www.youtube.com/shorts/uDIItU7dV_U" target="_blank" rel="noopener">▶ Watch Demo</a></td><td>Text, image and video inputs.</td><td>Up to about 15 seconds.</td><td>Broad camera-move variations.</td><td>Higher-resolution outputs may be available.</td><td>Native audio and lip-sync options.</td><td>Check paid-plan commercial-use terms.</td><td>Free credits / paid from about US$10/month.</td></tr>
+          <tr><td class="tool-cell"><span class="tool-name">Google Veo</span><a class="demo-button" href="https://www.youtube.com/watch?v=ODyROOW1dCo" target="_blank" rel="noopener">▶ Watch Demo</a></td><td>Text and image; video options vary by access route.</td><td>Short clips, with extension options.</td><td>Reference framing and transitions.</td><td>Supports selected high-resolution formats.</td><td>Native dialogue, ambience and music options.</td><td>Review Google plan and project terms.</td><td>Plan and region dependent.</td></tr>
+          <tr><td class="tool-cell"><span class="tool-name">Seedance</span><a class="demo-button" href="https://www.youtube.com/shorts/eTThBWfHxts" target="_blank" rel="noopener">▶ Watch Demo</a></td><td>Text, image, audio and video inputs.</td><td>About 4–15 seconds.</td><td>First/last-frame and transition options.</td><td>Up to 1080p in selected workflows.</td><td>Audio-visual generation and lip-sync options.</td><td>Check provider and hub terms.</td><td>Credit-based.</td></tr>
+          <tr><td class="tool-cell"><span class="tool-name">Pika</span><a class="demo-button" href="https://www.youtube.com/shorts/w25cD2aWUkw" target="_blank" rel="noopener">▶ Watch Demo</a></td><td>Text, image and video inputs.</td><td>About 1–10 seconds.</td><td>Scene ingredients and first/last-frame tools.</td><td>Plan dependent.</td><td>Talking-head lip-sync in selected tools.</td><td>Check commercial-use terms.</td><td>Free / paid from about US$10/month.</td></tr>
+          <tr><td class="tool-cell"><span class="tool-name">OpenAI Sora<br>(legacy)</span><a class="demo-button" href="https://www.youtube.com/shorts/Nx6X_KiQc0c" target="_blank" rel="noopener">▶ Watch Demo</a></td><td>Legacy API workflow.</td><td>Not suitable for new work.</td><td>Not suitable for new work.</td><td>Not suitable for new work.</td><td>Not suitable for new work.</td><td>API shutdown scheduled for 24 September 2026.</td><td>Not recommended for new use.</td></tr>
+          <tr><td class="tool-cell"><span class="tool-name">Luma Dream Machine</span><a class="demo-button" href="https://www.youtube.com/shorts/N6bgcmQ_Dds" target="_blank" rel="noopener">▶ Watch Demo</a></td><td>Image-led and text inputs.</td><td>About 5–10 seconds.</td><td>Smooth camera motion.</td><td>Check current plan.</td><td>Often silent generation; add sound in editing.</td><td>Check current commercial-use terms.</td><td>From about US$9.99/month.</td></tr>
+          <tr><td class="tool-cell"><span class="tool-name">Hailuo AI</span><a class="demo-button" href="https://www.youtube.com/shorts/eMRCq1yf5_s" target="_blank" rel="noopener">▶ Watch Demo</a></td><td>Text, image and video inputs.</td><td>Short clips.</td><td>Prompt-led movement.</td><td>Check current plan.</td><td>Sound may need to be added in editing.</td><td>Review provider terms and rights carefully.</td><td>Free / paid from about US$10/month.</td></tr>
+          <tr><td class="tool-cell"><span class="tool-name">Pixazo</span><a class="demo-button" href="https://www.youtube.com/watch?v=DQ-e16tsV5I" target="_blank" rel="noopener">▶ Watch Demo</a></td><td>Depends on the model used.</td><td>Model dependent.</td><td>Timeline sequencing, cuts and trims.</td><td>Model dependent.</td><td>Add sound or voice-over in the timeline.</td><td>Review both Pixazo and underlying-model terms.</td><td>Free / paid from about US$15/month.</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <h2 class="section-title">Work with TKG AI Hub</h2>
+    <section class="services">
+      <article class="service-card">
+        <h3>AI Video Consultation</h3>
+        <p>For individuals or small enterprises who want a practical way to plan and create their own videos.</p>
+        <ul><li>Choose a suitable app and workflow</li><li>Develop prompts, scenes and a simple storyboard</li><li>Plan narration, captions and music</li><li>Review output before publishing</li></ul>
+      </article>
+      <article class="service-card">
+        <h3>AI Video Freelance Support</h3>
+        <p>For people who would like help developing an educational, promotional or personalised video.</p>
+        <ul><li>Video concept and project planning</li><li>Scene, image and script preparation</li><li>AI-assisted video creation and editing</li><li>Review and refinement based on feedback</li></ul>
+      </article>
+      <article class="service-card">
+        <h3>Responsible Use</h3>
+        <p>Before work begins, we agree the purpose, scope, materials, estimated time and intended use. Clients should provide only images, names, logos and reference materials they are permitted to use.</p>
+      </article>
+    </section>
+
+    <h2 class="section-title">Start with Your Video Idea</h2>
+    <section class="notice">
+      <p>Whether you have a story, existing photographs, a business message or a learning topic, the first step is to clarify what your audience should see, understand and remember.</p>
+      <p>AI tools can support the process, but responsible planning, checking and editing make the final video useful.</p>
+    </section>
+  </main>
+
+  <footer>© 2026 Tan Keng Ghee · TKG AI Hub</footer>
+</body>
+</html>
