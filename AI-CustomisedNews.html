@@ -4,100 +4,101 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Customised News | TKG AI Hub</title>
-
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #17324d;
-      background: #f3f7f8;
-    }
-
-    header,
-    footer {
-      padding: 20px 8%;
-      color: white;
-      background: #12355b;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-
-    nav {
-      margin-top: 14px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    main {
-      max-width: 850px;
-      min-height: 55vh;
-      margin: auto;
-      padding: 70px 25px;
-      text-align: center;
-    }
-
-    .notice {
-      padding: 42px;
-      border-radius: 18px;
-      background: white;
-      box-shadow: 0 6px 22px rgba(22, 50, 79, 0.14);
-    }
-
-    h2 {
-      margin-top: 0;
-      color: #12355b;
-      font-size: 34px;
-    }
-
-    p {
-      font-size: 17px;
-      line-height: 1.65;
-    }
-
-    footer {
-      text-align: center;
-    }
+    * { box-sizing: border-box; }
+    :root { --navy:#12355b; --teal:#1d7a8c; --pale:#e8f5f6; --bg:#f3f7f8; --ink:#17324d; --muted:#597080; }
+    body { margin:0; font-family:Arial,Helvetica,sans-serif; color:var(--ink); background:var(--bg); }
+    header, footer { padding:20px 8%; color:#fff; background:var(--navy); }
+    header h1 { margin:0; font-size:28px; } header p { margin:6px 0 0; font-size:15px; }
+    nav { margin-top:14px; } nav a { color:#fff; text-decoration:none; font-weight:bold; }
+    main { max-width:1180px; margin:auto; padding:42px 25px 62px; }
+    .hero { display:flex; gap:40px; align-items:center; padding:38px; border-radius:20px; background:#fff; box-shadow:0 6px 22px rgba(22,50,79,.14); }
+    .hero-image { width:320px; max-width:42%; border-radius:14px; }
+    h2 { margin:0 0 14px; color:var(--navy); font-size:38px; } h3 { margin:0 0 10px; color:var(--navy); font-size:20px; }
+    p { font-size:16px; line-height:1.65; }
+    .highlight { margin-top:20px; padding:17px; border-left:5px solid var(--teal); background:var(--pale); font-size:16px; line-height:1.55; }
+    .button { display:inline-block; margin-top:18px; padding:12px 18px; border:0; border-radius:9px; color:#fff; background:var(--teal); cursor:pointer; font-size:15px; font-weight:bold; }
+    .section-title { margin:58px 0 12px; text-align:center; font-size:31px; } .section-intro { max-width:790px; margin:0 auto 30px; text-align:center; }
+    .steps, .cards, .services { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .step, .card, .service { padding:24px; border-radius:16px; background:#fff; box-shadow:0 5px 18px rgba(22,50,79,.12); }
+    .step-number { display:inline-flex; width:34px; height:34px; align-items:center; justify-content:center; margin-bottom:13px; border-radius:50%; color:#fff; background:var(--teal); font-weight:bold; }
+    .card p, .service p { margin:0; }
+    .feature-list { max-width:940px; margin:0 auto; padding:28px 34px; border-radius:16px; background:#fff; box-shadow:0 5px 18px rgba(22,50,79,.12); }
+    .feature-list ul { margin:0; padding-left:22px; } .feature-list li { margin:12px 0; font-size:16px; line-height:1.5; }
+    .notice { max-width:850px; margin:0 auto; padding:32px; border-radius:17px; text-align:center; background:#fff; box-shadow:0 5px 18px rgba(22,50,79,.12); }
+    .notice p { margin:8px 0; } footer { text-align:center; }
+    @media (max-width:850px) { .hero { display:block; text-align:center; } .hero-image { max-width:100%; width:300px; margin-bottom:24px; } .steps, .cards, .services { grid-template-columns:1fr; } h2 { font-size:31px; } }
+    @media (max-width:520px) { main { padding:28px 16px 44px; } .hero { padding:26px 20px; } .feature-list { padding:23px; } }
   </style>
 </head>
-
 <body>
   <header>
     <h1>TKG AI Hub</h1>
-
-    <nav>
-      <a href="index.html">← Return to Landing Page</a>
-    </nav>
+    <p>Practical AI for Personal Growth and SME Efficiency</p>
+    <nav><a href="index.html">← Return to Landing Page</a></nav>
   </header>
-
   <main>
-    <section class="notice">
-      <h2>AI Customised News</h2>
-
-      <p>
-        This page is under preparation.
-      </p>
-
-      <p>
-        TKG AI Hub will develop a practical personalised-news service to help
-        readers receive useful news according to their interests, preferred
-        topics and available reading time.
-      </p>
-
-      <p>
-        Please return again soon.
-      </p>
+    <section class="hero">
+      <img class="hero-image" src="AI-CustomisedNews.png" alt="AI customised news concept">
+      <div>
+        <h2>AI Customised News</h2>
+        <p>TKG AI Customised News is a developing digital-news service by TKG AI Hub. It is designed to prepare a clearer daily edition according to the reader’s interests, preferred sources, level of detail and available reading time.</p>
+        <div class="highlight"><strong>The aim:</strong> not simply to provide more news, but to provide more relevant, understandable and useful news.</div>
+        <button class="button" type="button" onclick="showPilotMessage()">Activate My TKG Daily News</button>
+      </div>
     </section>
-  </main>
 
-  <footer>
-    © 2026 Tan Keng Ghee · TKG AI Hub
-  </footer>
+    <h2 class="section-title">A Practical Customised-News Journey</h2>
+    <p class="section-intro">The future service is designed to let readers control what they receive, while preserving important Singapore and public-interest news.</p>
+    <section class="steps">
+      <article class="step"><div class="step-number">1</div><h3>Choose What Matters to You</h3><p>Readers will be able to define the news subjects, regions and perspectives that matter most to them—from Singapore affairs and world news to AI, business, football, health, travel and learning.</p></article>
+      <article class="step"><div class="step-number">2</div><h3>Build a Trusted Daily Edition</h3><p>TKG News Agency will give priority to authoritative sources, including official agencies, reputable Singapore media, international news agencies and relevant specialist sources.</p></article>
+      <article class="step"><div class="step-number">3</div><h3>Read at Your Own Pace</h3><p>Readers may choose a short update, a general daily edition or a more detailed briefing. The future service will respect the reader’s available time.</p></article>
+    </section>
+
+    <h2 class="section-title">Three Parts of TKG Daily News</h2>
+    <section class="cards">
+      <article class="card"><h3>Part 1 — Front Page and Must-Read News</h3><p>Essential stories of the day, with Singapore given priority. This includes major Singapore developments, public policy, world affairs, security and significant regional events.</p></article>
+      <article class="card"><h3>Part 2 — Business, Markets, Technology and AI</h3><p>A focused section for the economy, business, markets, digital transformation, artificial intelligence, data analytics and technology, with Singapore, ASEAN and East Asia developments where relevant.</p></article>
+      <article class="card"><h3>Part 3 — Sports, Analysis, Culture and Learning</h3><p>A broader section for football and selected sports, culture, entertainment, travel, educational material and useful watch-later videos or tutorials.</p></article>
+    </section>
+
+    <h2 class="section-title">Designed for Different Readers</h2>
+    <section class="cards">
+      <article class="card"><h3>The General Public in Singapore</h3><p>A reader may prefer Singapore affairs, household issues, healthcare, world affairs, artificial intelligence developments and football—presented in a clear general-reading style.</p></article>
+      <article class="card"><h3>The Small-Business Owner</h3><p>A reader may focus on business, economic developments, markets, artificial intelligence, technology and practical SME-related news.</p></article>
+      <article class="card"><h3>The Learner or Student</h3><p>A reader may choose simpler explanations, shorter reading time, selected countries and learning topics such as technology, science, skills and current affairs.</p></article>
+    </section>
+
+    <h2 class="section-title">What Makes TKG AI Customised News Different?</h2>
+    <section class="feature-list"><ul>
+      <li>The reader controls topics, regions, sources, detail level and reading time.</li>
+      <li>Singapore and essential public-interest news remain visible.</li>
+      <li>News is selected for relevance, authority and clarity—not only because it is popular or dramatic.</li>
+      <li>Readers can enjoy a focused reading experience designed to be free from advertisement distractions and interruptions.</li>
+      <li>Traditional news subscribers can gradually broaden or adjust their selected sources to include reputable Singapore and international news agencies.</li>
+      <li>The daily edition is designed to reduce repeated headlines and unnecessary information overload.</li>
+      <li>Important stories will include source links, publication context and clear distinction between facts, summaries and opinion.</li>
+    </ul></section>
+
+    <h2 class="section-title">Responsible News Use</h2>
+    <section class="notice"><p>TKG AI Customised News will summarise and organise news from approved sources. It will not copy full news articles.</p><p>Readers will be able to open the original source for further reading. For major or sensitive developments, official and primary sources will be prioritised where available.</p></section>
+
+    <h2 class="section-title">Work with TKG AI Hub</h2>
+    <section class="services">
+      <article class="service"><h3>Personal News Design</h3><p>Explore how reader priorities, trusted sources, reading time and explanation level can be organised into a useful personal news experience.</p></article>
+      <article class="service"><h3>AI News Learning</h3><p>Learn how AI can help people assess sources, reduce information overload and follow subjects that matter to their work and daily life.</p></article>
+      <article class="service"><h3>Future Reader Activation</h3><p>A future Personal News Contract will let readers set their news preferences, News Ready Time and frequency for a pilot customised-news service.</p></article>
+    </section>
+
+    <h2 class="section-title">A Future Reader-Controlled News Service</h2>
+    <section class="notice"><p>The future product will allow each reader to create a Personal News Contract covering selected regions, topics, sources, reading time, detail level and News Ready Time.</p><p>TKG AI Hub is developing this concept carefully—starting with a simple and reliable version before expanding to more advanced personalisation and automated delivery.</p><button class="button" type="button" onclick="showPilotMessage()">Activate My TKG Daily News</button></section>
+  </main>
+  <footer>© 2026 Tan Keng Ghee · TKG AI Hub</footer>
+  <script>
+    function showPilotMessage() {
+      alert('TKG Customised News is under development. Pilot activation will open later.');
+    }
+  </script>
 </body>
 </html>
