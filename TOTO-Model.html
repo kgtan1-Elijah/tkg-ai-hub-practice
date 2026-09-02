@@ -1,64 +1,68 @@
-<!-- TKG AI Hub: LIVE TOTO link update, 2 September 2026 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Data Analysis | TKG AI Hub</title>
+  <title>TOTO Historical Statistics Model | TKG AI Hub</title>
   <style>
-    * { box-sizing: border-box; }
-    :root { --navy:#12355b; --teal:#1d7a8c; --pale:#e8f5f6; --bg:#f3f7f8; --ink:#17324d; --muted:#597080; --gold:#b77a08; }
+    * { box-sizing:border-box; }
+    :root { --navy:#12355b; --teal:#1d7a8c; --pale:#e8f5f6; --bg:#f3f7f8; --ink:#17324d; --muted:#597080; }
     body { margin:0; font-family:Arial,Helvetica,sans-serif; color:var(--ink); background:var(--bg); }
     header, footer { padding:20px 8%; color:#fff; background:var(--navy); }
-    header h1 { margin:0; font-size:28px; } header p { margin:6px 0 0; font-size:15px; }
-    nav { margin-top:14px; } nav a { color:#fff; text-decoration:none; font-weight:bold; }
-    main { max-width:1180px; margin:auto; padding:42px 25px 62px; }
-    .hero { display:flex; gap:40px; align-items:center; padding:38px; border-radius:20px; background:#fff; box-shadow:0 6px 22px rgba(22,50,79,.14); }
-    .hero-image { width:300px; max-width:42%; border-radius:14px; }
-    h2 { margin:0 0 14px; color:var(--navy); font-size:38px; } h3 { margin:0 0 10px; color:var(--navy); font-size:20px; }
-    p { font-size:16px; line-height:1.65; }
-    .highlight { margin-top:20px; padding:17px; border-left:5px solid var(--teal); background:var(--pale); font-size:16px; line-height:1.55; }
-    .section-title { margin:58px 0 12px; text-align:center; font-size:31px; } .section-intro { max-width:790px; margin:0 auto 30px; text-align:center; }
-    .steps, .analysis-grid, .services { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-    .step, .analysis-card, .service { padding:24px; border-radius:16px; background:#fff; box-shadow:0 5px 18px rgba(22,50,79,.12); }
-    .step-number { display:inline-flex; width:34px; height:34px; align-items:center; justify-content:center; margin-bottom:13px; border-radius:50%; color:#fff; background:var(--teal); font-weight:bold; }
-    .analysis-card p, .service p { margin:0; }
-    .model { overflow:hidden; margin:26px 0; border-radius:18px; background:#fff; box-shadow:0 6px 22px rgba(22,50,79,.14); }
-    .model-image { display:block; width:100%; max-height:560px; object-fit:contain; background:#eef3f5; }
-    .model-copy { padding:28px; } .model-copy h3 { font-size:25px; }
-    .tag { display:inline-block; margin-bottom:10px; padding:6px 10px; border-radius:20px; color:#6d4800; background:#fff1cb; font-size:12px; font-weight:bold; text-transform:uppercase; letter-spacing:.04em; }
-    button, .model-button { display:inline-block; margin-top:12px; padding:12px 18px; border:0; border-radius:9px; color:#fff; background:var(--teal); cursor:pointer; font-size:15px; font-weight:bold; text-decoration:none; }
-    .note { max-width:900px; margin:0 auto; padding:26px 30px; border-radius:17px; background:#fff; box-shadow:0 5px 18px rgba(22,50,79,.12); }
-    .note ul { margin:0; padding-left:22px; } .note li { margin:10px 0; font-size:16px; line-height:1.5; }
+    header h1 { margin:0; font-size:28px; }
+    header p { margin:6px 0 0; font-size:15px; }
+    nav { display:flex; flex-wrap:wrap; gap:18px; margin-top:14px; }
+    nav a { color:#fff; text-decoration:none; font-weight:bold; }
+    main { max-width:1300px; margin:auto; padding:38px 25px 62px; }
+    .intro, .notice { max-width:1050px; margin:0 auto 24px; padding:28px; border-radius:18px; background:#fff; box-shadow:0 5px 18px rgba(22,50,79,.12); }
+    h2 { margin:0 0 10px; color:var(--navy); font-size:32px; }
+    p { margin:8px 0; font-size:16px; line-height:1.6; }
+    .notice { border-left:5px solid var(--teal); background:var(--pale); }
+    .report-shell { overflow:hidden; border-radius:18px; background:#fff; box-shadow:0 6px 22px rgba(22,50,79,.16); }
+    .report-heading { padding:16px 22px; color:#fff; background:var(--navy); font-size:17px; font-weight:bold; }
+    iframe { display:block; width:100%; min-height:860px; border:0; }
+    .help { max-width:1050px; margin:26px auto 0; padding:22px 28px; border-radius:16px; background:#fff; box-shadow:0 5px 18px rgba(22,50,79,.12); }
+    .help ul { margin:10px 0 0; padding-left:22px; }
+    .help li { margin:8px 0; line-height:1.5; }
     footer { text-align:center; }
-    @media (max-width:850px) { .hero { display:block; text-align:center; } .hero-image { max-width:100%; width:280px; margin-bottom:24px; } .steps,.analysis-grid,.services { grid-template-columns:1fr; } h2 { font-size:31px; } }
-    @media (max-width:520px) { main { padding:28px 16px 44px; } .hero { padding:26px 20px; } .model-copy,.note { padding:22px; } }
+    @media (max-width:700px) { main { padding:28px 14px 44px; } h2 { font-size:27px; } .intro,.notice,.help { padding:22px 20px; } iframe { min-height:760px; } }
   </style>
 </head>
 <body>
   <header>
     <h1>TKG AI Hub</h1>
     <p>Practical AI for Personal Growth and SME Efficiency</p>
-    <nav><a href="index.html">← Return to Landing Page</a></nav>
+    <nav>
+      <a href="AI-DataAnalysis.html">← Return to AI Data Analysis</a>
+      <a href="index.html">← Return to Landing Page</a>
+    </nav>
   </header>
+
   <main>
-    <section class="hero"><img class="hero-image" src="AI-Data.png" alt="AI data analysis"><div><h2>AI Data Analysis</h2><p>TKG AI Hub helps individuals and small enterprises organise data, build meaningful models and turn information into clearer insights for better decisions.</p><div class="highlight"><strong>From data to decisions:</strong> descriptive, diagnostic, predictive and prescriptive analysis—presented through practical Power BI models.</div></div></section>
-    <h2 class="section-title">A Practical Data-Analysis Journey</h2>
-    <p class="section-intro">A useful dashboard begins with a real question, well-organised data and clear visual storytelling.</p>
-    <section class="steps"><article class="step"><div class="step-number">1</div><h3>Organise the Data</h3><p>Bring together relevant information, clean the data and prepare it for analysis. Good decisions depend on reliable and understandable data.</p></article><article class="step"><div class="step-number">2</div><h3>Build the Model</h3><p>Design measures, filters and visual reports that allow users to explore patterns, comparisons and relationships.</p></article><article class="step"><div class="step-number">3</div><h3>Use Insights for Decisions</h3><p>Turn results into useful actions—whether for personal planning, business monitoring, market understanding or management reporting.</p></article></section>
-    <h2 class="section-title">Featured Power BI Models</h2>
-    <p class="section-intro">Two working examples show how the same data-analysis method can be applied to different real-life questions.</p>
-    <section class="model"><img class="model-image" src="TOTO-Model.png" alt="TOTO historical statistics Power BI model"><div class="model-copy"><span class="tag">Historical Statistical Analysis</span><h3>TOTO Model — Discover Trends. Explore Patterns. Visualize Probability.</h3><p>This model lets users explore historical Singapore TOTO draw data through number frequency, hit rate, latest-versus-past comparisons, number ranking and matching analysis.</p><p><strong>Important:</strong> this is an independent historical statistical and learning model. It does not predict winning numbers or guarantee any future outcome.</p><a class="model-button" href="TOTO-Model.html">Open TOTO Model</a></div></section>
-    <section class="model"><img class="model-image" src="HDB-Resale-Model.png" alt="HDB resale Power BI model"><div class="model-copy"><span class="tag">Property Market Analysis</span><h3>HDB Resale Model — What Drives HDB Resale Prices?</h3><p>This model helps users explore Singapore HDB resale transactions, including million-dollar-flat counts, price trends, transaction volume, town comparisons, flat types, storey range and lease characteristics.</p><p>It demonstrates how a public dataset can be turned into an interactive decision-support model for buyers, sellers, property observers and analysts.</p><button type="button" onclick="showModelMessage('HDB Resale')">Open HDB Resale Model</button></div></section>
-    <h2 class="section-title">Four Levels of Analysis</h2>
-    <section class="analysis-grid"><article class="analysis-card"><h3>Descriptive</h3><p><strong>What happened?</strong><br>For example: price trends and transaction counts by HDB town, or how often each TOTO number appeared historically.</p></article><article class="analysis-card"><h3>Diagnostic</h3><p><strong>Why did it happen?</strong><br>Compare town, flat type, lease and storey characteristics; or examine frequency patterns across selected time periods.</p></article><article class="analysis-card"><h3>Predictive</h3><p><strong>What may happen?</strong><br>Use historical HDB trends to explore possible market directions. TOTO historical data must not be treated as a winning-number predictor.</p></article><article class="analysis-card"><h3>Prescriptive</h3><p><strong>What action is sensible?</strong><br>Use comparisons to support a property shortlist, budget decision or business action plan.</p></article></section>
-    <h2 class="section-title">Work with TKG AI Hub</h2>
-    <section class="services"><article class="service"><h3>Data Organisation</h3><p>Structure spreadsheets and source data so they can be analysed properly and maintained more easily.</p></article><article class="service"><h3>Power BI Model Design</h3><p>Create practical dashboards, DAX measures, filters and visual reports for clearer monitoring and analysis.</p></article><article class="service"><h3>Decision-Support Analysis</h3><p>Translate data into trends, comparisons and practical insights for individuals and small enterprises.</p></article></section>
-    <h2 class="section-title">Responsible Data Use</h2>
-    <section class="note"><ul><li>Public interactive models should use only suitable public, non-sensitive data.</li><li>Private business, customer, financial or personal data requires separate secure handling and must not be placed in a public report.</li><li>The TOTO model is for historical statistical exploration only and is not betting or financial advice.</li><li>The HDB model supports analysis and comparison; it is not a property valuation, purchase recommendation or financial advisory service.</li></ul></section>
+    <section class="intro">
+      <h2>TOTO Historical Statistics Model</h2>
+      <p>Explore historical Singapore TOTO draw data through frequency, hit-rate, ranking, latest-versus-past and matching analysis.</p>
+    </section>
+
+    <section class="notice">
+      <strong>Important:</strong> This independent TKG AI Hub model is for learning and historical statistical analysis only. Past TOTO draw patterns cannot predict future winning numbers or guarantee any outcome. Please play responsibly. Data current to 30 April 2026.
+    </section>
+
+    <section class="report-shell" aria-label="Interactive TOTO historical statistics report">
+      <div class="report-heading">Interactive TOTO Model</div>
+      <iframe title="TKG AI Hub TOTO Historical Statistics Model" src="https://app.powerbi.com/view?r=eyJrIjoiZDM5YjFlMGItNjA1Ni00YmZlLWI2Y2EtM2U1YzVmOTI5Y2U4IiwidCI6ImI5MGQwZTZiLTMwNzctNDYyMC05YjhmLTEyZmRmNzI1NjcxZSIsImMiOjEwfQ%3D%3D" allowfullscreen="true"></iframe>
+    </section>
+
+    <section class="help">
+      <h2>How to use this model</h2>
+      <ul>
+        <li>Use the report-page buttons and filters to explore different historical views.</li>
+        <li>Use it to understand patterns in past draws, not to select future winning numbers.</li>
+        <li>The model uses public historical information. It is not affiliated with or endorsed by Singapore Pools.</li>
+      </ul>
+    </section>
   </main>
+
   <footer>© 2026 Tan Keng Ghee · TKG AI Hub</footer>
-  <script>function showModelMessage(modelName) { alert(modelName + ' interactive access is being prepared. Please return again soon.'); }</script>
 </body>
 </html>
-
